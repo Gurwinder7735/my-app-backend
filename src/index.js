@@ -17,6 +17,10 @@ if (process.env.MOBILE_ROUTES == "true") {
   routes = [...routes, ...require("./mobile/").routes];
 }
 
+if (process.env.WEB_ROUTES == "true") {
+  routes = [...routes, ...require("./webRoutes/").routes];
+}
+
 
 
 module.exports = {

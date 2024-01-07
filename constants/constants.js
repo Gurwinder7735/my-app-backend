@@ -53,29 +53,44 @@ const SMTP = {
 };
 
 const DATABASE = {
+
+  // MONGO DB
   CONFIG: {
     DEVELOPMENT: {
-      USERNAME: process.env.DEV_DB_USERNAME,
-      PASSWORD: process.env.DEV_DB_PASSWORD,
-      DATABASE: process.env.DEV_DB_NAME,
-      HOST: process.env.DEV_DB_HOST,
-      DIALECT: "mysql",
+     MONGO_URI: `mongodb://localhost:27017/${process.env.CI_MONGO_DB_NAME}`
     },
     TEST: {
-      USERNAME: process.env.CI_DB_USERNAME,
-      PASSWORD: process.env.CI_DB_PASSWORD,
-      DATABASE: process.env.CI_DB_NAME,
-      HOST: process.env.CI_DB_HOST,
-      DIALECT: "mysql",
+     MONGO_URI: `mongodb+srv://${process.env.CI_MONGO_DB_USER}:${process.env.CI_MONGO_DB_PASSWORD}@${process.env.CI_MONGO_DB_HOST}/${process.env.CI_MONGO_DB_NAME}`
     },
     PRODUCTION: {
-      USERNAME: process.env.PROD_DB_USERNAME,
-      PASSWORD: process.env.PROD_DB_PASSWORD,
-      DATABASE: process.env.PROD_DB_NAME,
-      HOST: process.env.PROD_DB_HOST,
-      DIALECT: "mysql",
-    },
+     MONGO_URI: `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_HOST}/${process.env.MONGO_DB_NAME}`
+    }
   },
+
+  // MYSQL
+  // CONFIG: {
+  //   CIELOPMENT: {
+  //     USERNAME: process.env.CI_DB_USERNAME,
+  //     PASSWORD: process.env.DEV_DB_PASSWORD,
+  //     DATABASE: process.env.DEV_DB_NAME,
+  //     HOST: process.env.DEV_DB_HOST,
+  //     DIALECT: "mysql",
+  //   },
+  //   TEST: {
+  //     USERNAME: process.env.CI_DB_USERNAME,
+  //     PASSWORD: process.env.CI_DB_PASSWORD,
+  //     DATABASE: process.env.CI_DB_NAME,
+  //     HOST: process.env.CI_DB_HOST,
+  //     DIALECT: "mysql",
+  //   },
+  //   PRODUCTION: {
+  //     USERNAME: process.env.PROD_DB_USERNAME,
+  //     PASSWORD: process.env.PROD_DB_PASSWORD,
+  //     DATABASE: process.env.PROD_DB_NAME,
+  //     HOST: process.env.PROD_DB_HOST,
+  //     DIALECT: "mysql",
+  //   },
+  // },
 
   USER_ROLES: {
     1: "USER",

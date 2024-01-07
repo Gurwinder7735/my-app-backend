@@ -1,5 +1,6 @@
 'use strict';
 require('dotenv').config();
+require('./config/config')
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -26,7 +27,7 @@ const STATUS_CODES = require("./utils/response/statusCodes");
 const app = express();
 
 // ROUTES
-const [commonAPI, brandApi, adminApi, mobileApi] = require("./src").routes;
+const [ webRoutes] = require("./src").routes;
 
 app.use(cors());
 
@@ -64,50 +65,10 @@ if (process.env.ADMIN_ROUTES == "true") {
 if (process.env.MOBILE_ROUTES == "true") {
   app.use("/api", mobileApi);
 }
+if (process.env.WEB_ROUTES == "true") {
+  app.use("/api", webRoutes);
+}
 
-app.use("/mail", (req, res) => {
-  return res.render("mailTemplates/ownership-transfer-brand.ejs", {
-    brandName: "Frannk Muller",
-    watchModel: "password",
-    watchId: "Factory Worker",
-    ownerName: "df",
-    lastOwner: "Guriwnder",
-    newOwner: "Surinder"
-  });
-});
-
-app.get(
-  "/generate-qr",
-  (req, res) => {
-    const size = req?.query?.size || 300;
-    const data = req?.query?.data || "No data"; // Change this to your desired data
-    const options = {
-      type: 'svg',
-      width: size,
-      height: size,
-    };
-
-    QRCode.toString(data, options, (err, svgString) => {
-      if (err) throw err;
-
-      const emailTemplate = fs.readFileSync(
-        path.join(
-          __dirname,
-          "/public/views/qrcode.ejs"
-        ),
-        "utf-8"
-      );
-  
-      const renderedTemplate = ejs.render(emailTemplate, {
-        svgString,
-        code: req?.query?.data
-      });
-
-      res.send(renderedTemplate);
-      console.log(svgString);
-    });
-  }
-);
 
 app.use("*", (req, res) => {
   throw new AppError("Not found", STATUS_CODES.NOT_FOUND);
@@ -118,7 +79,7 @@ console.log(SMTP);
 app.use(errorHandler);
 
 app.listen(process.env.PORT, () => {
-  console.log("server is listening on port" + process.env.PORT);
+  console.log("SERVER IS RUNNING ON PORT : " + process.env.PORT);
 });
 
 
