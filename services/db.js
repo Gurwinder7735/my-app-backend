@@ -1,0 +1,26 @@
+require("dotenv").config();
+const { DATABASE } = require("../constants/constants");
+
+module.exports = {
+  development: {
+    username: DATABASE.CONFIG.DEVELOPMENT.USERNAME,
+    password: DATABASE.CONFIG.DEVELOPMENT.PASSWORD,
+    database: DATABASE.CONFIG.DEVELOPMENT.DATABASE,
+    host: DATABASE.CONFIG.DEVELOPMENT.HOST,
+    dialect: DATABASE.CONFIG.DEVELOPMENT.DIALECT,
+  },
+  test: {
+    username: DATABASE.CONFIG.TEST.USERNAME,
+    password: DATABASE.CONFIG.TEST.PASSWORD,
+    database: DATABASE.CONFIG.TEST.DATABASE,
+    host: DATABASE.CONFIG.TEST.HOST,
+    dialect: DATABASE.CONFIG.TEST.DIALECT,
+  },
+  production: {
+    username: DATABASE.CONFIG.PRODUCTION.USERNAME,
+    password: DATABASE.CONFIG.PRODUCTION.PASSWORD,
+    database: DATABASE.CONFIG.PRODUCTION.DATABASE,
+    host: DATABASE.CONFIG.PRODUCTION.HOST,
+    dialect: DATABASE.CONFIG.PRODUCTION.DIALECT,
+  },
+};

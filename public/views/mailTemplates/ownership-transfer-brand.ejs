@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="http://trustlogfrontend.test.crebos.online/assets/fonts/aerial/stylesheet.css" rel="stylesheet" />
+  <title>TrustLog</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <table style="
+            max-width: 640px;
+            margin: 80px auto;
+            background-color: #f2f5f8;
+            border-spacing: 0px !important;
+      " width="640">
+    <tbody>
+      <tr>
+        <td style="padding: 32px">
+          <table style="border-spacing: 0px !important">
+            <tbody>
+              <tr>
+                <td style="width: 100%; padding: 24px 32px">
+                  <img src="http://trustlogfrontend.test.crebos.online/assets/images/logo-trustlog.png" alt="logo"
+                    height="auto" width="150px" />
+                </td>
+              </tr>
+              <tr>
+                <td style="background-color: #fff; padding: 32px">
+                  <table style="border-spacing: 0px !important">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span style="
+                                                                                font-family: 'Arial';
+                                                                                font-style: normal;
+                                                                                font-weight: 400;
+                                                                                font-size: 16px;
+                                                                                line-height: 24px;
+                                                                                color: #333333;
+                              ">
+                            <p>
+
+                              Dear <%- brandName %> Customer Support Team,
+                                <br><br>
+
+                                We are writing to inform you of a recent ownership transfer of one of your prestigious timepieces. At TrustLog, we hold our products in high regard and strive to ensure smooth ownership transitions.
+
+                                  <!-- <br><br> -->
+
+                                  <!-- Please find your account credentials below: -->
+                                  <br><br>
+
+                                  Ownership Transfer Details:
+
+                                      <br><br>
+
+                                   
+                                      Watch Model: <%- watchModel %> <br>
+                                      Serial Number: <%- watchId %><br>
+                                      Previous Owner: <%- lastOwner %><br>
+                                      New Owner: <%- newOwner %>
+
+                                      <br><br>
+                                      We are pleased to notify you that the previous owner,  <%- lastOwner %>, has successfully transferred ownership of the watch to the new owner, <%- newOwner %>. All necessary documentation and verification processes have been completed to facilitate this seamless transition.
+                                   
+                                      <br><br>
+
+                                      Your prompt attention to this matter is greatly appreciated.
+                                      <br>
+                                      <br>
+                                      Best Regards,<br>
+                                      TrustLog
+                            </p>
+                          </span>
+
+
+
+
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="background-color: #f7f9fc; padding: 32px">
+                  <table style="border-spacing: 0px !important">
+                    <tbody>
+
+                      <tr>
+                        <td>
+                          <img src="http://trustlogfrontend.test.crebos.online/assets/images/logo-trustlog.png"
+                            alt="logo" height="auto" width="150px" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

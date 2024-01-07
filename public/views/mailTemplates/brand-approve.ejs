@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="http://trustlogfrontend.test.crebos.online/assets/fonts/aerial/stylesheet.css" rel="stylesheet" />
+  <title>TrustLog</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <table style="
+            max-width: 640px;
+            margin: 80px auto;
+            background-color: #f2f5f8;
+            border-spacing: 0px !important;
+      " width="640">
+    <tbody>
+      <tr>
+        <td style="padding: 32px">
+          <table style="border-spacing: 0px !important">
+            <tbody>
+              <tr>
+                <td style="width: 100%; padding: 24px 32px">
+                  <img src="http://trustlogfrontend.test.crebos.online/assets/images/logo-trustlog.png" alt="logo" width="150"/>
+                </td>
+              </tr>
+              <tr>
+                <td style="background-color: #fff; padding: 32px">
+                  <table style="border-spacing: 0px !important">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span style="
+                                                                                font-family: 'Arial';
+                                                                                font-style: normal;
+                                                                                font-weight: 400;
+                                                                                font-size: 16px;
+                                                                                line-height: 24px;
+                                                                                color: #333333;
+                              ">
+
+                            <p>
+
+
+
+                              Dear <%- name %>,
+                              <br><br>
+
+                              Congratulations! We are delighted to inform you that your brand registration on the
+                              TrustLog platform has been approved. Welcome to our community of trusted brands!
+                              <br><br>
+                              To access your TrustLog account, simply log in using the credentials you provided during
+                              the sign-up process.
+
+                              <br><br>
+                              Please visit the TrustLog website at <%- process.env.FRONT_END_URL %>,
+                                Enter your username and password,
+                                and
+                                click on the "Login" or "Sign In" button to proceed.
+
+                                <br><br>
+                                Once again, congratulations on your brand's approval! We are excited to have you as part
+                                of TrustLog and look forward to a successful partnership.
+                                <br><br>
+                                Best regards,
+                                <br><br>
+
+                                TrustLog
+
+
+
+
+
+                            </p>
+                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="background-color: #f7f9fc; padding: 32px">
+                  <table style="border-spacing: 0px !important">
+                    <tbody>
+                      <tr>
+                        <td style="height: 16px"></td>
+                      </tr>
+                      <tr>
+                        <td style="height: 16px"></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img src="http://trustlogfrontend.test.crebos.online/assets/images/logo-trustlog.png"
+                            alt="logo" height="auto" width="150px" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

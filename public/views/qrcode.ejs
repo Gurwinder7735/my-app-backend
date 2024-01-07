@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+.button-class {
+  border: 1px solid;
+  border-radius: 0.5rem;
+  /* padding: 0.75rem; */
+  /* padding-top: 11px; */
+  /* padding-bottom: 11px; */
+  color: var(--primary-500);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5rem;
+  transition: all 1s;
+  background-color: var(--primary-100);
+}
+
+.button-class:hover {
+  background-color: white;
+  border-color: var(--primary-500);
+  cursor: pointer;
+  /* margin-right: 0.75rem; */
+}
+
+</style>
+<body style="display: flex; height: 90vh; justify-content: center; align-items: center;">
+   <div style="display: flex;flex-direction: column; align-items: center; justify-content: center;">
+   <div id="svg"> <%- svgString %></div>
+    <button id="downloadButton" class="button-class" style="width: 100px;">Download</button>
+   </div>
+  
+</body>
+
+<script>
+    document.getElementById("downloadButton").addEventListener("click", function() {
+        // Get the SVG content
+        var svgContent = document.querySelector("#svg").innerHTML 
+
+        const qrUrl = new URL("<%- code %>")
+        const watchId = qrUrl.searchParams.get("watchId");
+
+        
+        // Create a Blob from the SVG content
+        var blob = new Blob([svgContent], { type: "image/svg+xml" });
+        
+        // Create a URL for the Blob
+        var url = URL.createObjectURL(blob);
+        
+        // Create a temporary anchor element
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = `${watchId}.svg`; // Set the desired filename
+        
+
+
+        // Programmatically trigger a click on the anchor element
+        a.click();
+        
+        // Clean up the URL and remove the temporary anchor
+        URL.revokeObjectURL(url);
+        a.remove();
+    });
+</script>
+</html>
